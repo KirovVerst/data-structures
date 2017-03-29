@@ -7,8 +7,12 @@
 class vector {
     const static unsigned int DEFAULT_CAPACITY = 100;
     double *arr;
+    unsigned int curr_size;
+    unsigned int capacity;
 
     void extend(unsigned int delta_size);
+
+    void check_bounds(unsigned int index) throw();
 
 public:
     vector();
@@ -23,19 +27,19 @@ public:
 
     bool contains(double element);
 
-    double elementAt(double index);
+    double elementAt(unsigned int index) throw();
 
-    unsigned int indexOf(double element);
+    int indexOf(double element);
 
-    void insertAt(unsigned int index, double element);
+    void insertAt(unsigned int index, double element) throw();
 
     bool empty();
 
-    void removeAt(unsigned int index);
+    void removeAt(unsigned int index) throw();
 
     void remove(double element);
 
-    void replace(unsigned int index, double element);
+    void replace(unsigned int index, double element)throw();
 
     unsigned int size();
 };

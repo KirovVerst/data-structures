@@ -12,7 +12,7 @@ public:
 
     linked_list();
 
-    linked_list(double root_value);
+    linked_list(double head_value);
 
     ~linked_list();
 

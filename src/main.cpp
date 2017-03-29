@@ -1,13 +1,17 @@
-#include "../include/linked_list.h"
 #include "../include/vector.h"
 #include <iostream>
 
 using namespace std;
 
 int main() {
-    linked_list l;
-    l.push(1234);
-    cout << l.pop() << endl;
-    cout << l.is_empty() << endl;
+    vector v;
+    for (int i = 0; i < 35; i++) {
+        v.append(i);
+    }
+
+    for (unsigned int j = 0; j < v.size(); ++j) {
+        cout << v.elementAt(j) << " ";
+    }
+    cout << endl;
     return 0;
 }
