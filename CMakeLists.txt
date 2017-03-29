@@ -3,6 +3,6 @@ project(data_structures)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-set(SOURCE_FILES src/main.cpp src/linked_list.cpp)
+set(SOURCE_FILES src/main.cpp src/linked_list.cpp src/vector.cpp)
 
 add_executable(data_structures ${SOURCE_FILES})

@@ -1,11 +1,10 @@
 #include "../inlcude/linked_list.h"
 #include <iostream>
 
-using namespace std;
 
 linked_list::linked_list() : head(NULL) {}
 
-linked_list::linked_list(int head_value) {
+linked_list::linked_list(double head_value) {
     head = new node();
     head->value = head_value;
 }
@@ -18,21 +17,21 @@ linked_list::~linked_list() {
     }
 }
 
-void linked_list::push(int v) {
+void linked_list::push(double v) {
     node *n = new node();
     n->next = head;
     n->value = v;
     head = n;
 }
 
-int linked_list::pop() throw() {
+double linked_list::pop() throw() {
     if (this->is_empty()) {
-        throw runtime_error("The list is empty.");
+        throw std::runtime_error("The list is empty.");
     }
-    node *r_pointer = head;
-    int r_value = head->value;
+    node *r_podoubleer = head;
+    double r_value = head->value;
     head = head->next;
-    delete r_pointer;
+    delete r_podoubleer;
     return r_value;
 }
 
@@ -40,8 +39,8 @@ bool linked_list::is_empty() {
     return head == NULL;
 }
 
-int linked_list::count(int v) {
-    int c = 0;
+double linked_list::count(double v) {
+    double c = 0;
     node *p = head;
     while (p != NULL) {
         if (p->value == v) {

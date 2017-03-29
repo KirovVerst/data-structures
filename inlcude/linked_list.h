@@ -2,7 +2,7 @@
 #define DATA_STRUCTURES_FOO_H
 
 struct node {
-    int value;
+    double value;
     node *next;
 };
 
@@ -12,18 +12,18 @@ public:
 
     linked_list();
 
-    linked_list(int root_value);
+    linked_list(double root_value);
 
     ~linked_list();
 
-    void push(int v);
 
-    int pop() throw();
+    double pop() throw();
+
+    double count(double v);
+
+    void push(double v);
 
     bool is_empty();
-
-    int count(int v);
-
 };
 
 #endif //DATA_STRUCTURES_FOO_H
