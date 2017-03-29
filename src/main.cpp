@@ -1,6 +1,10 @@
-#include "../inlcude/foo.h"
+#include "../inlcude/linked_list.h"
+#include <iostream>
+
+using namespace std;
 
 int main() {
-    hello_world();
+    linked_list l;
+    cout << l.pop() << endl;
     return 0;
 }
