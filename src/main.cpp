@@ -1,5 +1,5 @@
-#include "../inlcude/linked_list.h"
-#include "../inlcude/vector.h"
+#include "../include/linked_list.h"
+#include "../include/vector.h"
 #include <iostream>
 
 using namespace std;

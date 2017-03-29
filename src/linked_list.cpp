@@ -1,4 +1,4 @@
-#include "../inlcude/linked_list.h"
+#include "../include/linked_list.h"
 #include <iostream>
 
 
