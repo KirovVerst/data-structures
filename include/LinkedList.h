@@ -1,20 +1,20 @@
 #ifndef DATA_STRUCTURES_FOO_H
 #define DATA_STRUCTURES_FOO_H
 
-struct node {
+struct Node {
     double value;
-    node *next;
+    Node *next;
 };
 
-class linked_list {
-    node *head;
+class LinkedList {
+    Node *head;
 public:
 
-    linked_list();
+    LinkedList();
 
-    linked_list(double head_value);
+    LinkedList(double head_value);
 
-    ~linked_list();
+    ~LinkedList();
 
 
     double pop() throw();

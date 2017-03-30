@@ -4,7 +4,7 @@
 
 #include <cstdio>
 
-class vector {
+class Vector {
     const static unsigned int DEFAULT_CAPACITY = 100;
     double *arr;
     unsigned int curr_size;
@@ -12,14 +12,14 @@ class vector {
 
     void extend(unsigned int delta_size);
 
-    void check_bounds(unsigned int index) throw();
+    void check_bounds(unsigned int index);
 
 public:
-    vector();
+    Vector();
 
-    vector(unsigned int size);
+    Vector(unsigned int size);
 
-    ~vector();
+    ~Vector();
 
     void append(double element);
 
@@ -27,19 +27,19 @@ public:
 
     bool contains(double element);
 
-    double elementAt(unsigned int index) throw();
+    double elementAt(unsigned int index);
 
     int indexOf(double element);
 
-    void insertAt(unsigned int index, double element) throw();
+    void insertAt(unsigned int index, double element);
 
     bool empty();
 
-    void removeAt(unsigned int index) throw();
+    void removeAt(unsigned int index);
 
     void remove(double element);
 
-    void replace(unsigned int index, double element)throw();
+    void replace(unsigned int index, double element);
 
     unsigned int size();
 };

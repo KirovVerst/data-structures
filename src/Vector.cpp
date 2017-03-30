@@ -1,29 +1,29 @@
 #include <stdexcept>
-#include "../include/vector.h"
+#include "../include/Vector.h"
 
-vector::vector() {
+Vector::Vector() {
     this->arr = new double[DEFAULT_CAPACITY];
     this->capacity = DEFAULT_CAPACITY;
     this->curr_size = 0;
 }
 
-vector::vector(unsigned int capacity) {
+Vector::Vector(unsigned int capacity) {
     this->arr = new double[capacity];
     this->capacity = capacity;
     this->curr_size = 0;
 }
 
-vector::~vector() {
+Vector::~Vector() {
     delete[] arr;
 }
 
-void vector::check_bounds(unsigned int index) throw() {
+void Vector::check_bounds(unsigned int index) {
     if (index >= curr_size) {
-        throw std::runtime_error("index is out of range");
+        throw std::out_of_range("Index is out of range");
     }
 }
 
-void vector::extend(unsigned int delta_size = DEFAULT_CAPACITY) {
+void Vector::extend(unsigned int delta_size = DEFAULT_CAPACITY) {
     capacity += delta_size;
     double *new_arr = new double[curr_size + capacity];
 
@@ -34,7 +34,7 @@ void vector::extend(unsigned int delta_size = DEFAULT_CAPACITY) {
     arr = new_arr;
 }
 
-void vector::append(double element) {
+void Vector::append(double element) {
     if (capacity == curr_size) {
         extend();
     }
@@ -42,23 +42,23 @@ void vector::append(double element) {
     curr_size++;
 }
 
-void vector::clear() {
+void Vector::clear() {
     delete[] arr;
     capacity = DEFAULT_CAPACITY;
     arr = new double[capacity];
     curr_size = 0;
 }
 
-bool vector::contains(const double element) {
+bool Vector::contains(const double element) {
     return this->indexOf(element) != -1;
 }
 
-double vector::elementAt(const unsigned int index) throw() {
+double Vector::elementAt(const unsigned int index) {
     check_bounds(index);
     return arr[index];
 }
 
-int vector::indexOf(const double element) {
+int Vector::indexOf(const double element) {
     for (int i = 0; i < curr_size; i++) {
         if (arr[i] == element) {
             return i;
@@ -67,7 +67,7 @@ int vector::indexOf(const double element) {
     return -1;
 }
 
-void vector::removeAt(unsigned int index) throw() {
+void Vector::removeAt(unsigned int index) {
     check_bounds(index);
 
     double *new_arr = new double[capacity];
@@ -82,7 +82,7 @@ void vector::removeAt(unsigned int index) throw() {
     curr_size--;
 }
 
-void vector::remove(double element) {
+void Vector::remove(double element) {
     int index = indexOf(element);
     if (index < 0) {
         return;
@@ -91,12 +91,12 @@ void vector::remove(double element) {
     }
 }
 
-void vector::replace(unsigned int index, double element) throw() {
+void Vector::replace(unsigned int index, double element) {
     check_bounds(index);
     arr[index] = element;
 }
 
-void vector::insertAt(unsigned int index, double element)throw() {
+void Vector::insertAt(unsigned int index, double element) {
     check_bounds(index);
     if (curr_size + 1 > capacity) {
         extend();
@@ -113,10 +113,10 @@ void vector::insertAt(unsigned int index, double element)throw() {
     delete[] arr;
 }
 
-bool vector::empty() {
+bool Vector::empty() {
     return curr_size == 0;
 }
 
-unsigned int vector::size() {
+unsigned int Vector::size() {
     return curr_size;
 }

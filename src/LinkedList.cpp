@@ -1,47 +1,47 @@
-#include "../include/linked_list.h"
+#include "../include/LinkedList.h"
 #include <iostream>
 
 
-linked_list::linked_list() : head(NULL) {}
+LinkedList::LinkedList() : head(NULL) {}
 
-linked_list::linked_list(double head_value) {
-    head = new node();
+LinkedList::LinkedList(double head_value) {
+    head = new Node();
     head->value = head_value;
 }
 
-linked_list::~linked_list() {
+LinkedList::~LinkedList() {
     while (head != NULL) {
-        node *n = head->next;
+        Node *n = head->next;
         delete head;
         head = n;
     }
 }
 
-void linked_list::push(double v) {
-    node *n = new node();
+void LinkedList::push(double v) {
+    Node *n = new Node();
     n->next = head;
     n->value = v;
     head = n;
 }
 
-double linked_list::pop() throw() {
+double LinkedList::pop() throw() {
     if (this->is_empty()) {
         throw std::runtime_error("The list is empty.");
     }
-    node *r_podoubleer = head;
+    Node *r_podoubleer = head;
     double r_value = head->value;
     head = head->next;
     delete r_podoubleer;
     return r_value;
 }
 
-bool linked_list::is_empty() {
+bool LinkedList::is_empty() {
     return head == NULL;
 }
 
-double linked_list::count(double v) {
+double LinkedList::count(double v) {
     double c = 0;
-    node *p = head;
+    Node *p = head;
     while (p != NULL) {
         if (p->value == v) {
             c++;
