@@ -1,4 +1,6 @@
-# data-structures
-Implementation of basic data structures:
+# data-structures-and-algorithms
+### Data structures:
 1. linked list
 2. vector
+### Algoritms:
+
