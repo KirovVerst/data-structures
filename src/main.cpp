@@ -1,9 +1,9 @@
-#include "../include/Vector.h"
-#include "../include/Set.h"
+#include "foo.h"
 #include <iostream>
 
 using namespace std;
 
 int main() {
+    hello_world();
     return 0;
 }
