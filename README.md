@@ -2,5 +2,5 @@
 ### Data structures:
 1. linked list
 2. vector
-### Algoritms:
+### Algorithms:
 
