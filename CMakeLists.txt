@@ -11,14 +11,14 @@ download_project(PROJ googletest
         ${UPDATE_DISCONNECTED_IF_AVAILABLE}
         )
 
-
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-
+set(build_tests ON)
 
 add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BINARY_DIR})
 
 
 set(SOURCE_FILES src/main.cpp)
+
 
 include_directories(structures/include)
 include_directories(algorithms/include)
@@ -29,3 +29,11 @@ add_subdirectory(structures)
 add_subdirectory(algorithms)
 
 target_link_libraries(data_structures_algorithms structures algorithms gtest gmock)
+
+if (build_tests)
+    set(TESTS_FILES test/set_tests.cpp)
+
+    add_executable(test_model ${TESTS_FILES})
+
+    target_link_libraries(test_model structures algorithms gtest gmock)
+endif ()
