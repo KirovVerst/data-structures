@@ -25,7 +25,7 @@ void LinkedList::push(double v) {
 }
 
 double LinkedList::pop() throw() {
-    if (this->is_empty()) {
+    if (this->empty()) {
         throw std::runtime_error("The list is empty.");
     }
     Node *prev_head = head;
@@ -35,7 +35,7 @@ double LinkedList::pop() throw() {
     return value;
 }
 
-bool LinkedList::is_empty() const {
+bool LinkedList::empty() const {
     return head == NULL;
 }
 

@@ -31,7 +31,7 @@ add_subdirectory(algorithms)
 target_link_libraries(data_structures_algorithms structures algorithms gtest gmock)
 
 if (build_tests)
-    set(TESTS_FILES test/set_tests.cpp)
+    set(TESTS_FILES test/tests.cpp)
 
     add_executable(test_model ${TESTS_FILES})
 

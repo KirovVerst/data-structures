@@ -23,7 +23,7 @@ public:
 
     void push(double v);
 
-    bool is_empty() const;
+    bool empty() const;
 };
 
 #endif //DATA_STRUCTURES_FOO_H
