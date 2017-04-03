@@ -19,11 +19,11 @@ public:
 
     double pop() throw();
 
-    double count(double v);
+    unsigned int count(double v) const;
 
     void push(double v);
 
-    bool is_empty();
+    bool is_empty() const;
 };
 
 #endif //DATA_STRUCTURES_FOO_H

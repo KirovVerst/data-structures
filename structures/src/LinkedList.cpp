@@ -1,4 +1,4 @@
-#include "../include/LinkedList.h"
+#include "LinkedList.h"
 #include <iostream>
 
 
@@ -28,19 +28,19 @@ double LinkedList::pop() throw() {
     if (this->is_empty()) {
         throw std::runtime_error("The list is empty.");
     }
-    Node *r_podoubleer = head;
-    double r_value = head->value;
+    Node *prev_head = head;
+    double value = head->value;
     head = head->next;
-    delete r_podoubleer;
-    return r_value;
+    delete prev_head;
+    return value;
 }
 
-bool LinkedList::is_empty() {
+bool LinkedList::is_empty() const {
     return head == NULL;
 }
 
-double LinkedList::count(double v) {
-    double c = 0;
+unsigned int LinkedList::count(double v) const {
+    unsigned int c = 0;
     Node *p = head;
     while (p != NULL) {
         if (p->value == v) {

@@ -1,5 +1,5 @@
 #include <stdexcept>
-#include "../include/Vector.h"
+#include "Vector.h"
 
 Vector::Vector() {
     this->arr = new double[DEFAULT_CAPACITY];
@@ -7,9 +7,9 @@ Vector::Vector() {
     this->curr_size = 0;
 }
 
-Vector::Vector(unsigned int capacity) {
-    this->arr = new double[capacity];
-    this->capacity = capacity;
+Vector::Vector(unsigned int _capacity) {
+    this->arr = new double[_capacity];
+    this->capacity = _capacity;
     this->curr_size = 0;
 }
 

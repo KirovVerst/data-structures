@@ -17,7 +17,7 @@ class Vector {
 public:
     Vector();
 
-    Vector(unsigned int size);
+    Vector(unsigned int _capacity);
 
     ~Vector();
 

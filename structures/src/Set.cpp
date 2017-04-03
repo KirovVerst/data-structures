@@ -1,15 +1,13 @@
-//
-// Created by Kirov on 30/03/2017.
-//
 #include <stdexcept>
 
-#include "../include/Set.h"
+#include "Set.h"
 
 using std::out_of_range;
 
 Set::Set() {
     items = new Vector();
 };
+
 
 Set::Set(double *values, unsigned int len) {
     items = new Vector(len);
@@ -35,15 +33,15 @@ void Set::remove(double item) {
     }
 };
 
-bool Set::contains(double item) {
+bool Set::contains(double item) const {
     return items->contains(item);
 };
 
-unsigned int Set::size() {
+unsigned int Set::size() const {
     return items->size();
 };
 
-bool Set::empty() {
+bool Set::empty() const {
     return items->empty();
 };
 
@@ -54,5 +52,8 @@ double Set::pop() {
     double v = items->elementAt(size() - 1);
     items->removeAt(size() - 1);
     return v;
+}
 
+Set Set::unite(const Set &other) {
+    return Set();
 }

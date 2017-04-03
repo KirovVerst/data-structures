@@ -9,6 +9,8 @@ public:
 
     Set();
 
+    Set(const Set &set);
+
     Set(double *values, unsigned int len);
 
     ~Set();
@@ -17,21 +19,21 @@ public:
 
     void remove(double item);
 
-    bool contains(double item);
+    bool contains(double item) const;
 
-    unsigned int size();
+    unsigned int size() const;
 
-    bool empty();
+    bool empty() const;
 
     double pop();
 
-    Set unite(Set other);
+    Set unite(const Set &other);
 
-    Set intersection(Set other);
+    Set intersection(const Set &other);
 
-    Set difference(Set other);
+    Set difference(const Set &other);
 
-    Set symmetric_difference(Set other);
+    Set symmetric_difference(const Set &other);
 
 };
 
