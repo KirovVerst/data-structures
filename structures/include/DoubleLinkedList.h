@@ -2,17 +2,21 @@
 #define DATA_STRUCTURES_ALGORITHMS_DOUBLELINKEDLIST_H
 
 
-struct Node {
+struct DoubleLinkedNode {
     double value;
-    Node *prev = nullptr;
-    Node *next = nullptr;
+    DoubleLinkedNode *prev = nullptr;
+    DoubleLinkedNode *next = nullptr;
 
-    Node() {};
+    DoubleLinkedNode() {};
 
-    Node(const double &_value) : value(_value) {};
+    DoubleLinkedNode(const double &_value) : value(_value) {};
 };
 
+
 class DoubleLinkedList {
+
+    typedef DoubleLinkedNode Node;
+
     Node *head = nullptr;
     Node *tail = nullptr;
 public:

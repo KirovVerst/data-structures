@@ -1,32 +1,28 @@
+#include <stdexcept>
 #include "LinkedList.h"
-#include <iostream>
 
+LinkedList::LinkedList() : head(nullptr) {}
 
-LinkedList::LinkedList() : head(NULL) {}
-
-LinkedList::LinkedList(double head_value) {
-    head = new Node();
-    head->value = head_value;
-}
+LinkedList::LinkedList(const double &value) : head(new Node(value)) {}
 
 LinkedList::~LinkedList() {
-    while (head != NULL) {
-        Node *n = head->next;
+    Node *ptr;
+    while (head != nullptr) {
+        ptr = head->next;
         delete head;
-        head = n;
+        head = ptr;
     }
 }
 
-void LinkedList::push(double v) {
-    Node *n = new Node();
+void LinkedList::push(const double &value) {
+    Node *n = new Node(value);
     n->next = head;
-    n->value = v;
     head = n;
 }
 
-double LinkedList::pop() throw() {
+double LinkedList::pop(){
     if (this->empty()) {
-        throw std::runtime_error("The list is empty.");
+        throw std::runtime_error("list is empty.");
     }
     Node *prev_head = head;
     double value = head->value;
@@ -36,14 +32,14 @@ double LinkedList::pop() throw() {
 }
 
 bool LinkedList::empty() const {
-    return head == NULL;
+    return head == nullptr;
 }
 
-unsigned int LinkedList::count(double v) const {
+unsigned int LinkedList::count(const double &value) const {
     unsigned int c = 0;
     Node *p = head;
-    while (p != NULL) {
-        if (p->value == v) {
+    while (p != nullptr) {
+        if (p->value == value) {
             c++;
         }
         p = p->next;

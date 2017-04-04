@@ -1,27 +1,34 @@
 #ifndef DATA_STRUCTURES_FOO_H
 #define DATA_STRUCTURES_FOO_H
 
-struct Node {
+struct LinkedNode {
     double value;
-    Node *next;
+    LinkedNode *next = nullptr;
+
+    LinkedNode();
+
+    LinkedNode(const double &_value) : value(_value) {};
 };
 
+
 class LinkedList {
+
+    typedef LinkedNode Node;
+
     Node *head;
 public:
 
     LinkedList();
 
-    LinkedList(double head_value);
+    LinkedList(const double &head_value);
 
     ~LinkedList();
 
+    void push(const double &value);
 
-    double pop() throw();
+    double pop();
 
-    unsigned int count(double v) const;
-
-    void push(double v);
+    unsigned int count(const double &value) const;
 
     bool empty() const;
 };
