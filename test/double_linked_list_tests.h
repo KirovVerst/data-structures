@@ -23,5 +23,25 @@ TEST(DoubleLinkedList, push_pop) {
     EXPECT_EQ(l.pop_back(), 2);
 }
 
+TEST(DoubleLinkedList, contains) {
+    List l(0);
+    l.push_front(1);
+    l.push_front(3);
+    EXPECT_TRUE(l.contains(1));
+    EXPECT_TRUE(l.contains(3));
+    EXPECT_FALSE(l.contains(9));
+}
+
+TEST(DoubleLinkedList, count) {
+    List l(0);
+    l.push_front(1);
+    l.push_front(1);
+    l.push_front(1);
+    l.push_front(4);
+    EXPECT_EQ(l.count(1), 3);
+    EXPECT_EQ(l.count(4), 1);
+    EXPECT_EQ(l.count(99), 0);
+}
+
 
 #endif //DATA_STRUCTURES_ALGORITHMS_DOUBLE_LINKED_LIST_TESTS_H

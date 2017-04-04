@@ -34,6 +34,10 @@ public:
 
     double pop_front();
 
+    bool contains(const double &_value) const;
+
+    unsigned int count(const double &_value) const;
+
     bool empty() const;
 
 };

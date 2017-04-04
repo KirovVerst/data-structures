@@ -56,3 +56,27 @@ double DoubleLinkedList::pop_front() {
     return value;
 }
 
+bool DoubleLinkedList::contains(const double &_value) const {
+    Node *ptr = head;
+    while (ptr != nullptr) {
+        if (ptr->value == _value) {
+            return true;
+        }
+        ptr = ptr->prev;
+    }
+    return false;
+}
+
+unsigned int DoubleLinkedList::count(const double &_value) const {
+    Node *ptr = head;
+
+    unsigned int _count = 0;
+    while (ptr != nullptr) {
+        if (ptr->value == _value) {
+            _count++;
+        }
+        ptr = ptr->prev;
+    }
+    return _count;
+}
+
