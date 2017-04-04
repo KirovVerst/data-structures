@@ -19,6 +19,8 @@ public:
 
     Vector(unsigned int _capacity);
 
+    Vector(double *_arr, unsigned int _size, unsigned int _capacity = 0);
+
     ~Vector();
 
     void append(double element);
@@ -29,7 +31,7 @@ public:
 
     double elementAt(unsigned int index);
 
-    int indexOf(double element);
+    int indexOf(const double &element);
 
     void insertAt(unsigned int index, double element);
 

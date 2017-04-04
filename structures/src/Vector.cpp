@@ -1,5 +1,6 @@
 #include <stdexcept>
 #include "Vector.h"
+#include <iostream>
 
 Vector::Vector() {
     this->arr = new double[DEFAULT_CAPACITY];
@@ -11,6 +12,23 @@ Vector::Vector(unsigned int _capacity) {
     this->arr = new double[_capacity];
     this->capacity = _capacity;
     this->curr_size = 0;
+}
+
+Vector::Vector(double *_arr, unsigned int _size, unsigned int _capacity) {
+    if (_capacity < _size) {
+        throw std::runtime_error("capacity must be greater or equal to size");
+    }
+    this->curr_size = _size;
+    if (_capacity == 0) {
+        this->capacity = _size;
+    } else {
+        this->capacity = _capacity;
+    }
+    this->arr = new double[this->capacity];
+
+    for (int i = 0; i < this->curr_size; i++) {
+        this->arr[i] = _arr[i];
+    }
 }
 
 Vector::~Vector() {
@@ -58,7 +76,7 @@ double Vector::elementAt(const unsigned int index) {
     return arr[index];
 }
 
-int Vector::indexOf(const double element) {
+int Vector::indexOf(const double &element) {
     for (int i = 0; i < curr_size; i++) {
         if (arr[i] == element) {
             return i;
@@ -111,6 +129,7 @@ void Vector::insertAt(unsigned int index, double element) {
         new_arr[j] = arr[j - 1];
     }
     delete[] arr;
+    arr = new_arr;
 }
 
 bool Vector::empty() {
