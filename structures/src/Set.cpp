@@ -4,13 +4,10 @@
 
 using std::out_of_range;
 
-Set::Set() {
-    items = new Vector();
-};
+Set::Set() : items(new Vector()) {};
 
 
-Set::Set(double *values, unsigned int len) {
-    items = new Vector(len);
+Set::Set(double *values, unsigned int len) : items(new Vector(len)) {
     for (int i = 0; i < len; ++i) {
         items->append(values[i]);
     }
@@ -54,6 +51,7 @@ double Set::pop() {
     return v;
 }
 
+//TODO : need iterators
 Set Set::unite(const Set &other) {
     return Set();
 }

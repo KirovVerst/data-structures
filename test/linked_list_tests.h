@@ -31,4 +31,13 @@ TEST(LinkedList, count) {
     EXPECT_EQ(l.count(1), 1);
 }
 
+TEST(LinkedList, contains) {
+    LinkedList l;
+    l.push(12);
+    l.push(34);
+    EXPECT_TRUE(l.contains(12));
+    EXPECT_TRUE(l.contains(34));
+    EXPECT_FALSE(l.contains(56));
+}
+
 #endif //DATA_STRUCTURES_ALGORITHMS_LINKED_LIST_TESTS_H

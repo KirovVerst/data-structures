@@ -30,6 +30,8 @@ public:
 
     unsigned int count(const double &value) const;
 
+    bool contains(const double &value) const;
+
     bool empty() const;
 };
 

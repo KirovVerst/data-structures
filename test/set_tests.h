@@ -31,4 +31,14 @@ TEST(Set, contains) {
     EXPECT_TRUE(s1.contains(1));
 }
 
+
+TEST(Set, remove) {
+    Set s;
+    s.add(12);
+    s.add(34);
+    s.add(56);
+    s.remove(12);
+    EXPECT_FALSE(s.contains(12));
+}
+
 #endif //DATA_STRUCTURES_ALGORITHMS_EXAMPLE_H

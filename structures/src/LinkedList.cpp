@@ -20,7 +20,7 @@ void LinkedList::push(const double &value) {
     head = n;
 }
 
-double LinkedList::pop(){
+double LinkedList::pop() {
     if (this->empty()) {
         throw std::runtime_error("list is empty.");
     }
@@ -45,4 +45,15 @@ unsigned int LinkedList::count(const double &value) const {
         p = p->next;
     }
     return c;
+}
+
+bool LinkedList::contains(const double &value) const {
+    Node *ptr = head;
+    while (ptr != nullptr) {
+        if (ptr->value == value) {
+            return true;
+        }
+        ptr = ptr->next;
+    }
+    return false;
 }
