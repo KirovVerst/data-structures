@@ -1,8 +1,8 @@
-//
-// Created by Kirov on 31/03/2017.
-//
-
 #ifndef DATA_STRUCTURES_ALGORITHMS_FOO_H
 #define DATA_STRUCTURES_ALGORITHMS_FOO_H
-void hello_world();
+
+
+
+void quick_sort(double *arr, unsigned int size, bool reverse = false);
+
 #endif //DATA_STRUCTURES_ALGORITHMS_FOO_H
