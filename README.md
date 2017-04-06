@@ -1,8 +1,10 @@
 # data-structures-and-algorithms
-### Data structures:
+### Data structures
 1. Linked list
 2. Double linked list
 3. Vector
 
-### Algorithms:
+### Algorithms
+#### Sorting algoritms:
+1. Quicksort
 
