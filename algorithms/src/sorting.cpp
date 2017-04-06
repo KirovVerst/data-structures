@@ -12,13 +12,13 @@ bool is_descending(const double &a, const double &b) {
     return a > b;
 }
 
-void quick_sort(double *arr, unsigned int l, unsigned int r, bool reverse) {
+void quick_sort(double *arr, int l, int r, bool reverse) {
 
     Comparator comparator1 = reverse ? is_descending : is_ascending;
     Comparator comparator2 = reverse ? is_ascending : is_descending;
     double x = arr[l + (r - l) / 2];
-    unsigned int i = l;
-    unsigned int j = r;
+    int i = l;
+    int j = r;
     while (i < j) {
         while (comparator1(arr[i], x)) i++;
 
@@ -39,6 +39,6 @@ void quick_sort(double *arr, unsigned int l, unsigned int r, bool reverse) {
 }
 
 
-void quick_sort(double *arr, unsigned int size, bool reverse) {
+void quick_sort(double *arr, int size, bool reverse) {
     quick_sort(arr, 0, size - 1, reverse);
 }

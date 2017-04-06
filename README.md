@@ -5,6 +5,6 @@
 3. Vector
 
 ### Algorithms
-#### Sorting algoritms:
+#### Sorting algorithms:
 1. Quicksort
 
