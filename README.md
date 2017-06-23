@@ -1,5 +1,5 @@
 # data-structures
-## Base structures
+## Basic structures
 1. Linked list
 2. Double linked list
 3. Vector
