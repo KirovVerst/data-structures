@@ -1,4 +1,4 @@
-#include "sorting_tests.h"
+#include "vector_tests.h"
 
 int main(int argc, char *argv[]) {
     ::testing::InitGoogleTest(&argc, argv);

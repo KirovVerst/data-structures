@@ -1,10 +1,6 @@
-# data-structures-and-algorithms
-### Data structures
+# data-structures
+## Base structures
 1. Linked list
 2. Double linked list
 3. Vector
-
-### Algorithms
-#### Sorting algorithms:
-1. Quicksort
 
